@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.zjnu.hmz.dao.DoorMapper" >
+  <resultMap id="BaseResultMap" type="cn.zjnu.hmz.model.Door" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="user_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="door_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="door_location" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="door_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="add_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="door_state" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, user_id, door_name, door_location, door_id, add_time, door_state
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.zjnu.hmz.model.DoorExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from door
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from door
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from door
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="cn.zjnu.hmz.model.DoorExample" >
+    delete from door
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.zjnu.hmz.model.Door" >
+    insert into door (id, user_id, door_name, 
+      door_location, door_id, add_time, 
+      door_state)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{doorName,jdbcType=VARCHAR}, 
+      #{doorLocation,jdbcType=VARCHAR}, #{doorId,jdbcType=INTEGER}, #{addTime,jdbcType=TIMESTAMP}, 
+      #{doorState,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.zjnu.hmz.model.Door" >
+    insert into door
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="doorName != null" >
+        door_name,
+      </if>
+      <if test="doorLocation != null" >
+        door_location,
+      </if>
+      <if test="doorId != null" >
+        door_id,
+      </if>
+      <if test="addTime != null" >
+        add_time,
+      </if>
+      <if test="doorState != null" >
+        door_state,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="doorName != null" >
+        #{doorName,jdbcType=VARCHAR},
+      </if>
+      <if test="doorLocation != null" >
+        #{doorLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="doorId != null" >
+        #{doorId,jdbcType=INTEGER},
+      </if>
+      <if test="addTime != null" >
+        #{addTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="doorState != null" >
+        #{doorState,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cn.zjnu.hmz.model.DoorExample" resultType="java.lang.Integer" >
+    select count(*) from door
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update door
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.userId != null" >
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.doorName != null" >
+        door_name = #{record.doorName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.doorLocation != null" >
+        door_location = #{record.doorLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.doorId != null" >
+        door_id = #{record.doorId,jdbcType=INTEGER},
+      </if>
+      <if test="record.addTime != null" >
+        add_time = #{record.addTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.doorState != null" >
+        door_state = #{record.doorState,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update door
+    set id = #{record.id,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER},
+      door_name = #{record.doorName,jdbcType=VARCHAR},
+      door_location = #{record.doorLocation,jdbcType=VARCHAR},
+      door_id = #{record.doorId,jdbcType=INTEGER},
+      add_time = #{record.addTime,jdbcType=TIMESTAMP},
+      door_state = #{record.doorState,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.zjnu.hmz.model.Door" >
+    update door
+    <set >
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="doorName != null" >
+        door_name = #{doorName,jdbcType=VARCHAR},
+      </if>
+      <if test="doorLocation != null" >
+        door_location = #{doorLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="doorId != null" >
+        door_id = #{doorId,jdbcType=INTEGER},
+      </if>
+      <if test="addTime != null" >
+        add_time = #{addTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="doorState != null" >
+        door_state = #{doorState,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.zjnu.hmz.model.Door" >
+    update door
+    set user_id = #{userId,jdbcType=INTEGER},
+      door_name = #{doorName,jdbcType=VARCHAR},
+      door_location = #{doorLocation,jdbcType=VARCHAR},
+      door_id = #{doorId,jdbcType=INTEGER},
+      add_time = #{addTime,jdbcType=TIMESTAMP},
+      door_state = #{doorState,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

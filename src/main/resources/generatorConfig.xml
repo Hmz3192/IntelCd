@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!--数据库驱动,需要使用绝对路径，路径也要根据自己实际，进行更改-->
+    <!--<classPathEntry    location="D:\MavenRepository\mysql\mysql-connector-java\5.1.38\mysql-connector-java-5.1.38.jar"/>-->
+    <!--<classPathEntry    location="C:\Users\admin\MavenRepository\mysql\mysql-connector-java\5.1.38\mysql-connector-java-5.1.38.jar"/>-->
+    <classPathEntry    location="C:\Users\ThinKPad\.m2\repository\mysql\mysql-connector-java\5.1.25\mysql-connector-java-5.1.25.jar"/>
+
+
+    <context id="DB2Tables"    targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--数据库链接地址账号密码，如果要生成需要先修改数据库信息-->
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://10.7.90.181:3306/stservice" userId="root" password="123456">-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://101.132.112.251:3306/intelcd" userId="root" password="Humingzhi3192">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!--生成Model类存放位置-->
+        <javaModelGenerator targetPackage="cn.zjnu.hmz.model" targetProject="src/main/java">
+            <!-- 是否对model添加 构造函数 -->
+            <property name="constructorBased" value="true"/>
+            <!-- 是否允许子包，即targetPackage.schemaName.tableName -->
+            <property name="enableSubPackages" value="true"/>
+            <!-- 是否对类CHAR类型的列的数据进行trim操作 -->
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!--生成映射文件存放位置-->
+        <sqlMapGenerator targetPackage="mapping" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!--生成Dao类存放位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.zjnu.hmz.dao" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <!--用百分号表示生成所有表,可以直接省去一个一个写 <table tableName="%" /> ，也可以写具体的表，进行个别表更新<table tableName="firm" /-->
+        <table tableName="%">
+        </table>
+
+
+
+
+    </context>
+</generatorConfiguration>
