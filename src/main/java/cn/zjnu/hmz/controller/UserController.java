@@ -26,9 +26,17 @@ public class UserController {
     @RequestMapping(method = RequestMethod.POST, value = "/register")
     public String register(User user) {
         user.setAccount(Util.getSixId());
+        user.setPicUrl("http://192.168.1.104:8080/IntelCd/img/2.jpg");
         user.setPassword(String.valueOf(new Md5Hash(user.getPassword(), JsonUtils.readSalt())));
         userService.register(user);
         return user.getAccount();
+
+    }
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/getPic")
+    public User getPic(String hxid) {
+        return userService.getPic(hxid);
 
     }
 }

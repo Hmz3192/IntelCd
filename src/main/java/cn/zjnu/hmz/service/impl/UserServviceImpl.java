@@ -9,6 +9,7 @@ import org.apache.shiro.crypto.hash.Md5Hash;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @Author Hu mingzhi
@@ -24,4 +25,19 @@ public class UserServviceImpl implements UserService{
     public void register(User user) {
         userMapper.insertSelective(user);
     }
+
+    @Override
+    public User getPic(String hxid) {
+        User user;
+        UserExample userExample = new UserExample();
+        UserExample.Criteria criteria = userExample.createCriteria();
+        criteria.andAccountEqualTo(hxid);
+        List<User> users = userMapper.selectByExample(userExample);
+        if (users.get(0) == null) {
+             user = new User();
+        }else
+            user = users.get(0);
+        return user;
+    }
+
 }

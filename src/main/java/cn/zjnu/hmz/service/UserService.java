@@ -10,4 +10,6 @@ public interface UserService {
 
     void register(User user);
 
+
+    User getPic(String hxid);
 }
