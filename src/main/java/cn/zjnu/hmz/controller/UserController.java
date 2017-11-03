@@ -1,6 +1,8 @@
 package cn.zjnu.hmz.controller;
 
+import cn.zjnu.hmz.model.Door;
 import cn.zjnu.hmz.model.User;
+import cn.zjnu.hmz.service.DoorService;
 import cn.zjnu.hmz.service.UserService;
 import cn.zjnu.hmz.utils.JsonUtils;
 import cn.zjnu.hmz.utils.Util;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @Author Hu mingzhi
@@ -22,7 +25,8 @@ public class UserController {
 
     @Resource
     UserService userService;
-
+    @Resource
+    DoorService doorService;
     @RequestMapping(method = RequestMethod.POST, value = "/register")
     public String register(User user) {
         user.setAccount(Util.getSixId());
@@ -39,4 +43,12 @@ public class UserController {
         return userService.getPic(hxid);
 
     }
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/getKeyByUser")
+    public List<Door> getKeyByUser(String hxid) {
+        return doorService.getDoorByUser(hxid);
+
+    }
+
 }

@@ -5,8 +5,8 @@
 <generatorConfiguration>
     <!--数据库驱动,需要使用绝对路径，路径也要根据自己实际，进行更改-->
     <!--<classPathEntry    location="D:\MavenRepository\mysql\mysql-connector-java\5.1.38\mysql-connector-java-5.1.38.jar"/>-->
-    <!--<classPathEntry    location="C:\Users\admin\MavenRepository\mysql\mysql-connector-java\5.1.38\mysql-connector-java-5.1.38.jar"/>-->
-    <classPathEntry    location="C:\Users\ThinKPad\.m2\repository\mysql\mysql-connector-java\5.1.25\mysql-connector-java-5.1.25.jar"/>
+    <classPathEntry    location="C:\Users\ZJNU-Hmz\.m2\repository\mysql\mysql-connector-java\5.1.44\mysql-connector-java-5.1.44.jar"/>
+    <!--<classPathEntry    location="C:\Users\ThinKPad\.m2\repository\mysql\mysql-connector-java\5.1.25\mysql-connector-java-5.1.25.jar"/>-->
 
 
     <context id="DB2Tables"    targetRuntime="MyBatis3">
@@ -39,7 +39,7 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!--用百分号表示生成所有表,可以直接省去一个一个写 <table tableName="%" /> ，也可以写具体的表，进行个别表更新<table tableName="firm" /-->
-        <table tableName="%">
+        <table tableName="door_record">
         </table>
 
 

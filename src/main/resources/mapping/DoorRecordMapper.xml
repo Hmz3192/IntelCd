@@ -5,7 +5,7 @@
     <constructor >
       <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="user_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="door_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="door_id" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="open_time" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="open_kind" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="open_password" jdbcType="VARCHAR" javaType="java.lang.String" />
@@ -107,7 +107,7 @@
     insert into door_record (id, user_id, door_id, 
       open_time, open_kind, open_password, 
       open_reson)
-    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{doorId,jdbcType=INTEGER}, 
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{doorId,jdbcType=VARCHAR}, 
       #{openTime,jdbcType=VARCHAR}, #{openKind,jdbcType=VARCHAR}, #{openPassword,jdbcType=VARCHAR}, 
       #{openReson,jdbcType=VARCHAR})
   </insert>
@@ -144,7 +144,7 @@
         #{userId,jdbcType=INTEGER},
       </if>
       <if test="doorId != null" >
-        #{doorId,jdbcType=INTEGER},
+        #{doorId,jdbcType=VARCHAR},
       </if>
       <if test="openTime != null" >
         #{openTime,jdbcType=VARCHAR},
@@ -176,7 +176,7 @@
         user_id = #{record.userId,jdbcType=INTEGER},
       </if>
       <if test="record.doorId != null" >
-        door_id = #{record.doorId,jdbcType=INTEGER},
+        door_id = #{record.doorId,jdbcType=VARCHAR},
       </if>
       <if test="record.openTime != null" >
         open_time = #{record.openTime,jdbcType=VARCHAR},
@@ -199,7 +199,7 @@
     update door_record
     set id = #{record.id,jdbcType=INTEGER},
       user_id = #{record.userId,jdbcType=INTEGER},
-      door_id = #{record.doorId,jdbcType=INTEGER},
+      door_id = #{record.doorId,jdbcType=VARCHAR},
       open_time = #{record.openTime,jdbcType=VARCHAR},
       open_kind = #{record.openKind,jdbcType=VARCHAR},
       open_password = #{record.openPassword,jdbcType=VARCHAR},
@@ -215,7 +215,7 @@
         user_id = #{userId,jdbcType=INTEGER},
       </if>
       <if test="doorId != null" >
-        door_id = #{doorId,jdbcType=INTEGER},
+        door_id = #{doorId,jdbcType=VARCHAR},
       </if>
       <if test="openTime != null" >
         open_time = #{openTime,jdbcType=VARCHAR},
@@ -235,7 +235,7 @@
   <update id="updateByPrimaryKey" parameterType="cn.zjnu.hmz.model.DoorRecord" >
     update door_record
     set user_id = #{userId,jdbcType=INTEGER},
-      door_id = #{doorId,jdbcType=INTEGER},
+      door_id = #{doorId,jdbcType=VARCHAR},
       open_time = #{openTime,jdbcType=VARCHAR},
       open_kind = #{openKind,jdbcType=VARCHAR},
       open_password = #{openPassword,jdbcType=VARCHAR},

@@ -375,52 +375,62 @@ public class DoorExample {
             return (Criteria) this;
         }
 
-        public Criteria andDoorIdEqualTo(Integer value) {
+        public Criteria andDoorIdEqualTo(String value) {
             addCriterion("door_id =", value, "doorId");
             return (Criteria) this;
         }
 
-        public Criteria andDoorIdNotEqualTo(Integer value) {
+        public Criteria andDoorIdNotEqualTo(String value) {
             addCriterion("door_id <>", value, "doorId");
             return (Criteria) this;
         }
 
-        public Criteria andDoorIdGreaterThan(Integer value) {
+        public Criteria andDoorIdGreaterThan(String value) {
             addCriterion("door_id >", value, "doorId");
             return (Criteria) this;
         }
 
-        public Criteria andDoorIdGreaterThanOrEqualTo(Integer value) {
+        public Criteria andDoorIdGreaterThanOrEqualTo(String value) {
             addCriterion("door_id >=", value, "doorId");
             return (Criteria) this;
         }
 
-        public Criteria andDoorIdLessThan(Integer value) {
+        public Criteria andDoorIdLessThan(String value) {
             addCriterion("door_id <", value, "doorId");
             return (Criteria) this;
         }
 
-        public Criteria andDoorIdLessThanOrEqualTo(Integer value) {
+        public Criteria andDoorIdLessThanOrEqualTo(String value) {
             addCriterion("door_id <=", value, "doorId");
             return (Criteria) this;
         }
 
-        public Criteria andDoorIdIn(List<Integer> values) {
+        public Criteria andDoorIdLike(String value) {
+            addCriterion("door_id like", value, "doorId");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoorIdNotLike(String value) {
+            addCriterion("door_id not like", value, "doorId");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoorIdIn(List<String> values) {
             addCriterion("door_id in", values, "doorId");
             return (Criteria) this;
         }
 
-        public Criteria andDoorIdNotIn(List<Integer> values) {
+        public Criteria andDoorIdNotIn(List<String> values) {
             addCriterion("door_id not in", values, "doorId");
             return (Criteria) this;
         }
 
-        public Criteria andDoorIdBetween(Integer value1, Integer value2) {
+        public Criteria andDoorIdBetween(String value1, String value2) {
             addCriterion("door_id between", value1, value2, "doorId");
             return (Criteria) this;
         }
 
-        public Criteria andDoorIdNotBetween(Integer value1, Integer value2) {
+        public Criteria andDoorIdNotBetween(String value1, String value2) {
             addCriterion("door_id not between", value1, value2, "doorId");
             return (Criteria) this;
         }
@@ -552,6 +562,76 @@ public class DoorExample {
 
         public Criteria andDoorStateNotBetween(String value1, String value2) {
             addCriterion("door_state not between", value1, value2, "doorState");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoorKindIsNull() {
+            addCriterion("door_kind is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoorKindIsNotNull() {
+            addCriterion("door_kind is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoorKindEqualTo(String value) {
+            addCriterion("door_kind =", value, "doorKind");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoorKindNotEqualTo(String value) {
+            addCriterion("door_kind <>", value, "doorKind");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoorKindGreaterThan(String value) {
+            addCriterion("door_kind >", value, "doorKind");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoorKindGreaterThanOrEqualTo(String value) {
+            addCriterion("door_kind >=", value, "doorKind");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoorKindLessThan(String value) {
+            addCriterion("door_kind <", value, "doorKind");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoorKindLessThanOrEqualTo(String value) {
+            addCriterion("door_kind <=", value, "doorKind");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoorKindLike(String value) {
+            addCriterion("door_kind like", value, "doorKind");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoorKindNotLike(String value) {
+            addCriterion("door_kind not like", value, "doorKind");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoorKindIn(List<String> values) {
+            addCriterion("door_kind in", values, "doorKind");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoorKindNotIn(List<String> values) {
+            addCriterion("door_kind not in", values, "doorKind");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoorKindBetween(String value1, String value2) {
+            addCriterion("door_kind between", value1, value2, "doorKind");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoorKindNotBetween(String value1, String value2) {
+            addCriterion("door_kind not between", value1, value2, "doorKind");
             return (Criteria) this;
         }
     }

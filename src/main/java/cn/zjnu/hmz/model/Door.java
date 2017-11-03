@@ -11,13 +11,15 @@ public class Door {
 
     private String doorLocation;
 
-    private Integer doorId;
+    private String doorId;
 
     private Date addTime;
 
     private String doorState;
 
-    public Door(Integer id, Integer userId, String doorName, String doorLocation, Integer doorId, Date addTime, String doorState) {
+    private String doorKind;
+
+    public Door(Integer id, Integer userId, String doorName, String doorLocation, String doorId, Date addTime, String doorState, String doorKind) {
         this.id = id;
         this.userId = userId;
         this.doorName = doorName;
@@ -25,6 +27,7 @@ public class Door {
         this.doorId = doorId;
         this.addTime = addTime;
         this.doorState = doorState;
+        this.doorKind = doorKind;
     }
 
     public Door() {
@@ -63,12 +66,12 @@ public class Door {
         this.doorLocation = doorLocation == null ? null : doorLocation.trim();
     }
 
-    public Integer getDoorId() {
+    public String getDoorId() {
         return doorId;
     }
 
-    public void setDoorId(Integer doorId) {
-        this.doorId = doorId;
+    public void setDoorId(String doorId) {
+        this.doorId = doorId == null ? null : doorId.trim();
     }
 
     public Date getAddTime() {
@@ -85,5 +88,13 @@ public class Door {
 
     public void setDoorState(String doorState) {
         this.doorState = doorState == null ? null : doorState.trim();
+    }
+
+    public String getDoorKind() {
+        return doorKind;
+    }
+
+    public void setDoorKind(String doorKind) {
+        this.doorKind = doorKind == null ? null : doorKind.trim();
     }
 }

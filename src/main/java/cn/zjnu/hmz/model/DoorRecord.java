@@ -5,7 +5,7 @@ public class DoorRecord {
 
     private Integer userId;
 
-    private Integer doorId;
+    private String doorId;
 
     private String openTime;
 
@@ -15,7 +15,7 @@ public class DoorRecord {
 
     private String openReson;
 
-    public DoorRecord(Integer id, Integer userId, Integer doorId, String openTime, String openKind, String openPassword, String openReson) {
+    public DoorRecord(Integer id, Integer userId, String doorId, String openTime, String openKind, String openPassword, String openReson) {
         this.id = id;
         this.userId = userId;
         this.doorId = doorId;
@@ -45,12 +45,12 @@ public class DoorRecord {
         this.userId = userId;
     }
 
-    public Integer getDoorId() {
+    public String getDoorId() {
         return doorId;
     }
 
-    public void setDoorId(Integer doorId) {
-        this.doorId = doorId;
+    public void setDoorId(String doorId) {
+        this.doorId = doorId == null ? null : doorId.trim();
     }
 
     public String getOpenTime() {
