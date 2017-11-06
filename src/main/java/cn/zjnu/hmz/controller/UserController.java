@@ -1,6 +1,7 @@
 package cn.zjnu.hmz.controller;
 
 import cn.zjnu.hmz.model.Door;
+import cn.zjnu.hmz.model.DoorRecord;
 import cn.zjnu.hmz.model.User;
 import cn.zjnu.hmz.service.DoorService;
 import cn.zjnu.hmz.service.UserService;
@@ -30,7 +31,7 @@ public class UserController {
     @RequestMapping(method = RequestMethod.POST, value = "/register")
     public String register(User user) {
         user.setAccount(Util.getSixId());
-        user.setPicUrl("http://192.168.1.104:8080/IntelCd/img/2.jpg");
+        user.setPicUrl("http://192.168.1.105:8080/IntelCd/img/2.jpg");
         user.setPassword(String.valueOf(new Md5Hash(user.getPassword(), JsonUtils.readSalt())));
         userService.register(user);
         return user.getAccount();
@@ -51,4 +52,9 @@ public class UserController {
 
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/getDoorRecord")
+    public List<DoorRecord> getDoorRecord(String doorId) {
+        return doorService.getDoorRecord(doorId);
+
+    }
 }
