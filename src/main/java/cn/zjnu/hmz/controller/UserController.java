@@ -31,7 +31,7 @@ public class UserController {
     @RequestMapping(method = RequestMethod.POST, value = "/register")
     public String register(User user) {
         user.setAccount(Util.getSixId());
-        user.setPicUrl("http://192.168.1.105:8080/IntelCd/img/2.jpg");
+        user.setPicUrl("http://101.132.112.251:8111/IntelCd/img/2.jpg");
         user.setPassword(String.valueOf(new Md5Hash(user.getPassword(), JsonUtils.readSalt())));
         userService.register(user);
         return user.getAccount();
