@@ -92,7 +92,22 @@ public class User {
         return email;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", account='" + account + '\'' +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", picUrl='" + picUrl + '\'' +
+                ", sixPasswrod='" + sixPasswrod + '\'' +
+                ", iphone='" + iphone + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
     public void setEmail(String email) {
+
         this.email = email == null ? null : email.trim();
     }
 }
