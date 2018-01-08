@@ -504,73 +504,143 @@ public class DoorRecordExample {
             return (Criteria) this;
         }
 
-        public Criteria andOpenResonIsNull() {
-            addCriterion("open_reson is null");
+        public Criteria andOpenReasonIsNull() {
+            addCriterion("open_reason is null");
             return (Criteria) this;
         }
 
-        public Criteria andOpenResonIsNotNull() {
-            addCriterion("open_reson is not null");
+        public Criteria andOpenReasonIsNotNull() {
+            addCriterion("open_reason is not null");
             return (Criteria) this;
         }
 
-        public Criteria andOpenResonEqualTo(String value) {
-            addCriterion("open_reson =", value, "openReson");
+        public Criteria andOpenReasonEqualTo(String value) {
+            addCriterion("open_reason =", value, "openReason");
             return (Criteria) this;
         }
 
-        public Criteria andOpenResonNotEqualTo(String value) {
-            addCriterion("open_reson <>", value, "openReson");
+        public Criteria andOpenReasonNotEqualTo(String value) {
+            addCriterion("open_reason <>", value, "openReason");
             return (Criteria) this;
         }
 
-        public Criteria andOpenResonGreaterThan(String value) {
-            addCriterion("open_reson >", value, "openReson");
+        public Criteria andOpenReasonGreaterThan(String value) {
+            addCriterion("open_reason >", value, "openReason");
             return (Criteria) this;
         }
 
-        public Criteria andOpenResonGreaterThanOrEqualTo(String value) {
-            addCriterion("open_reson >=", value, "openReson");
+        public Criteria andOpenReasonGreaterThanOrEqualTo(String value) {
+            addCriterion("open_reason >=", value, "openReason");
             return (Criteria) this;
         }
 
-        public Criteria andOpenResonLessThan(String value) {
-            addCriterion("open_reson <", value, "openReson");
+        public Criteria andOpenReasonLessThan(String value) {
+            addCriterion("open_reason <", value, "openReason");
             return (Criteria) this;
         }
 
-        public Criteria andOpenResonLessThanOrEqualTo(String value) {
-            addCriterion("open_reson <=", value, "openReson");
+        public Criteria andOpenReasonLessThanOrEqualTo(String value) {
+            addCriterion("open_reason <=", value, "openReason");
             return (Criteria) this;
         }
 
-        public Criteria andOpenResonLike(String value) {
-            addCriterion("open_reson like", value, "openReson");
+        public Criteria andOpenReasonLike(String value) {
+            addCriterion("open_reason like", value, "openReason");
             return (Criteria) this;
         }
 
-        public Criteria andOpenResonNotLike(String value) {
-            addCriterion("open_reson not like", value, "openReson");
+        public Criteria andOpenReasonNotLike(String value) {
+            addCriterion("open_reason not like", value, "openReason");
             return (Criteria) this;
         }
 
-        public Criteria andOpenResonIn(List<String> values) {
-            addCriterion("open_reson in", values, "openReson");
+        public Criteria andOpenReasonIn(List<String> values) {
+            addCriterion("open_reason in", values, "openReason");
             return (Criteria) this;
         }
 
-        public Criteria andOpenResonNotIn(List<String> values) {
-            addCriterion("open_reson not in", values, "openReson");
+        public Criteria andOpenReasonNotIn(List<String> values) {
+            addCriterion("open_reason not in", values, "openReason");
             return (Criteria) this;
         }
 
-        public Criteria andOpenResonBetween(String value1, String value2) {
-            addCriterion("open_reson between", value1, value2, "openReson");
+        public Criteria andOpenReasonBetween(String value1, String value2) {
+            addCriterion("open_reason between", value1, value2, "openReason");
             return (Criteria) this;
         }
 
-        public Criteria andOpenResonNotBetween(String value1, String value2) {
-            addCriterion("open_reson not between", value1, value2, "openReson");
+        public Criteria andOpenReasonNotBetween(String value1, String value2) {
+            addCriterion("open_reason not between", value1, value2, "openReason");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeActiveIsNull() {
+            addCriterion("time_active is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeActiveIsNotNull() {
+            addCriterion("time_active is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeActiveEqualTo(String value) {
+            addCriterion("time_active =", value, "timeActive");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeActiveNotEqualTo(String value) {
+            addCriterion("time_active <>", value, "timeActive");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeActiveGreaterThan(String value) {
+            addCriterion("time_active >", value, "timeActive");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeActiveGreaterThanOrEqualTo(String value) {
+            addCriterion("time_active >=", value, "timeActive");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeActiveLessThan(String value) {
+            addCriterion("time_active <", value, "timeActive");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeActiveLessThanOrEqualTo(String value) {
+            addCriterion("time_active <=", value, "timeActive");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeActiveLike(String value) {
+            addCriterion("time_active like", value, "timeActive");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeActiveNotLike(String value) {
+            addCriterion("time_active not like", value, "timeActive");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeActiveIn(List<String> values) {
+            addCriterion("time_active in", values, "timeActive");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeActiveNotIn(List<String> values) {
+            addCriterion("time_active not in", values, "timeActive");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeActiveBetween(String value1, String value2) {
+            addCriterion("time_active between", value1, value2, "timeActive");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeActiveNotBetween(String value1, String value2) {
+            addCriterion("time_active not between", value1, value2, "timeActive");
             return (Criteria) this;
         }
     }

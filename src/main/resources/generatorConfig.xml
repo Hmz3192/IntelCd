@@ -15,8 +15,8 @@
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
         <!--数据库链接地址账号密码，如果要生成需要先修改数据库信息-->
-        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://10.7.90.181:3306/stservice" userId="root" password="123456">-->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://101.132.112.251:3306/intelcd" userId="root" password="Humingzhi3192">
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" con4nectionURL="jdbc:mysql://10.7.90.181:3306/stservice" userId="root" password="123456">-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://101.201.234.133:3306/intelcd" userId="root" password="Humingzhi3192">
         </jdbcConnection>
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
@@ -39,7 +39,7 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!--用百分号表示生成所有表,可以直接省去一个一个写 <table tableName="%" /> ，也可以写具体的表，进行个别表更新<table tableName="firm" /-->
-        <table tableName="door_record">
+        <table tableName="%">
         </table>
 
 

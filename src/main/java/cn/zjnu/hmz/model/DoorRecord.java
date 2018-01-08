@@ -13,16 +13,19 @@ public class DoorRecord {
 
     private String openPassword;
 
-    private String openReson;
+    private String openReason;
 
-    public DoorRecord(Integer id, Integer userId, String doorId, String openTime, String openKind, String openPassword, String openReson) {
+    private String timeActive;
+
+    public DoorRecord(Integer id, Integer userId, String doorId, String openTime, String openKind, String openPassword, String openReason, String timeActive) {
         this.id = id;
         this.userId = userId;
         this.doorId = doorId;
         this.openTime = openTime;
         this.openKind = openKind;
         this.openPassword = openPassword;
-        this.openReson = openReson;
+        this.openReason = openReason;
+        this.timeActive = timeActive;
     }
 
     public DoorRecord() {
@@ -77,11 +80,19 @@ public class DoorRecord {
         this.openPassword = openPassword == null ? null : openPassword.trim();
     }
 
-    public String getOpenReson() {
-        return openReson;
+    public String getOpenReason() {
+        return openReason;
     }
 
-    public void setOpenReson(String openReson) {
-        this.openReson = openReson == null ? null : openReson.trim();
+    public void setOpenReason(String openReason) {
+        this.openReason = openReason == null ? null : openReason.trim();
+    }
+
+    public String getTimeActive() {
+        return timeActive;
+    }
+
+    public void setTimeActive(String timeActive) {
+        this.timeActive = timeActive == null ? null : timeActive.trim();
     }
 }

@@ -1,7 +1,6 @@
 package cn.zjnu.hmz.model;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class DoorExample {
@@ -445,52 +444,62 @@ public class DoorExample {
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeEqualTo(Date value) {
+        public Criteria andAddTimeEqualTo(String value) {
             addCriterion("add_time =", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeNotEqualTo(Date value) {
+        public Criteria andAddTimeNotEqualTo(String value) {
             addCriterion("add_time <>", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeGreaterThan(Date value) {
+        public Criteria andAddTimeGreaterThan(String value) {
             addCriterion("add_time >", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeGreaterThanOrEqualTo(Date value) {
+        public Criteria andAddTimeGreaterThanOrEqualTo(String value) {
             addCriterion("add_time >=", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeLessThan(Date value) {
+        public Criteria andAddTimeLessThan(String value) {
             addCriterion("add_time <", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeLessThanOrEqualTo(Date value) {
+        public Criteria andAddTimeLessThanOrEqualTo(String value) {
             addCriterion("add_time <=", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeIn(List<Date> values) {
+        public Criteria andAddTimeLike(String value) {
+            addCriterion("add_time like", value, "addTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddTimeNotLike(String value) {
+            addCriterion("add_time not like", value, "addTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddTimeIn(List<String> values) {
             addCriterion("add_time in", values, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeNotIn(List<Date> values) {
+        public Criteria andAddTimeNotIn(List<String> values) {
             addCriterion("add_time not in", values, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeBetween(Date value1, Date value2) {
+        public Criteria andAddTimeBetween(String value1, String value2) {
             addCriterion("add_time between", value1, value2, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeNotBetween(Date value1, Date value2) {
+        public Criteria andAddTimeNotBetween(String value1, String value2) {
             addCriterion("add_time not between", value1, value2, "addTime");
             return (Criteria) this;
         }

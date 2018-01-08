@@ -444,73 +444,73 @@ public class UserExample {
             return (Criteria) this;
         }
 
-        public Criteria andSixPasswrodIsNull() {
-            addCriterion("six_passwrod is null");
+        public Criteria andSixPasswordIsNull() {
+            addCriterion("six_password is null");
             return (Criteria) this;
         }
 
-        public Criteria andSixPasswrodIsNotNull() {
-            addCriterion("six_passwrod is not null");
+        public Criteria andSixPasswordIsNotNull() {
+            addCriterion("six_password is not null");
             return (Criteria) this;
         }
 
-        public Criteria andSixPasswrodEqualTo(String value) {
-            addCriterion("six_passwrod =", value, "sixPasswrod");
+        public Criteria andSixPasswordEqualTo(String value) {
+            addCriterion("six_password =", value, "sixPassword");
             return (Criteria) this;
         }
 
-        public Criteria andSixPasswrodNotEqualTo(String value) {
-            addCriterion("six_passwrod <>", value, "sixPasswrod");
+        public Criteria andSixPasswordNotEqualTo(String value) {
+            addCriterion("six_password <>", value, "sixPassword");
             return (Criteria) this;
         }
 
-        public Criteria andSixPasswrodGreaterThan(String value) {
-            addCriterion("six_passwrod >", value, "sixPasswrod");
+        public Criteria andSixPasswordGreaterThan(String value) {
+            addCriterion("six_password >", value, "sixPassword");
             return (Criteria) this;
         }
 
-        public Criteria andSixPasswrodGreaterThanOrEqualTo(String value) {
-            addCriterion("six_passwrod >=", value, "sixPasswrod");
+        public Criteria andSixPasswordGreaterThanOrEqualTo(String value) {
+            addCriterion("six_password >=", value, "sixPassword");
             return (Criteria) this;
         }
 
-        public Criteria andSixPasswrodLessThan(String value) {
-            addCriterion("six_passwrod <", value, "sixPasswrod");
+        public Criteria andSixPasswordLessThan(String value) {
+            addCriterion("six_password <", value, "sixPassword");
             return (Criteria) this;
         }
 
-        public Criteria andSixPasswrodLessThanOrEqualTo(String value) {
-            addCriterion("six_passwrod <=", value, "sixPasswrod");
+        public Criteria andSixPasswordLessThanOrEqualTo(String value) {
+            addCriterion("six_password <=", value, "sixPassword");
             return (Criteria) this;
         }
 
-        public Criteria andSixPasswrodLike(String value) {
-            addCriterion("six_passwrod like", value, "sixPasswrod");
+        public Criteria andSixPasswordLike(String value) {
+            addCriterion("six_password like", value, "sixPassword");
             return (Criteria) this;
         }
 
-        public Criteria andSixPasswrodNotLike(String value) {
-            addCriterion("six_passwrod not like", value, "sixPasswrod");
+        public Criteria andSixPasswordNotLike(String value) {
+            addCriterion("six_password not like", value, "sixPassword");
             return (Criteria) this;
         }
 
-        public Criteria andSixPasswrodIn(List<String> values) {
-            addCriterion("six_passwrod in", values, "sixPasswrod");
+        public Criteria andSixPasswordIn(List<String> values) {
+            addCriterion("six_password in", values, "sixPassword");
             return (Criteria) this;
         }
 
-        public Criteria andSixPasswrodNotIn(List<String> values) {
-            addCriterion("six_passwrod not in", values, "sixPasswrod");
+        public Criteria andSixPasswordNotIn(List<String> values) {
+            addCriterion("six_password not in", values, "sixPassword");
             return (Criteria) this;
         }
 
-        public Criteria andSixPasswrodBetween(String value1, String value2) {
-            addCriterion("six_passwrod between", value1, value2, "sixPasswrod");
+        public Criteria andSixPasswordBetween(String value1, String value2) {
+            addCriterion("six_password between", value1, value2, "sixPassword");
             return (Criteria) this;
         }
 
-        public Criteria andSixPasswrodNotBetween(String value1, String value2) {
-            addCriterion("six_passwrod not between", value1, value2, "sixPasswrod");
+        public Criteria andSixPasswordNotBetween(String value1, String value2) {
+            addCriterion("six_password not between", value1, value2, "sixPassword");
             return (Criteria) this;
         }
 
@@ -651,6 +651,146 @@ public class UserExample {
 
         public Criteria andEmailNotBetween(String value1, String value2) {
             addCriterion("email not between", value1, value2, "email");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardIsNull() {
+            addCriterion("id_card is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardIsNotNull() {
+            addCriterion("id_card is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardEqualTo(String value) {
+            addCriterion("id_card =", value, "idCard");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardNotEqualTo(String value) {
+            addCriterion("id_card <>", value, "idCard");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardGreaterThan(String value) {
+            addCriterion("id_card >", value, "idCard");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardGreaterThanOrEqualTo(String value) {
+            addCriterion("id_card >=", value, "idCard");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardLessThan(String value) {
+            addCriterion("id_card <", value, "idCard");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardLessThanOrEqualTo(String value) {
+            addCriterion("id_card <=", value, "idCard");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardLike(String value) {
+            addCriterion("id_card like", value, "idCard");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardNotLike(String value) {
+            addCriterion("id_card not like", value, "idCard");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardIn(List<String> values) {
+            addCriterion("id_card in", values, "idCard");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardNotIn(List<String> values) {
+            addCriterion("id_card not in", values, "idCard");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardBetween(String value1, String value2) {
+            addCriterion("id_card between", value1, value2, "idCard");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardNotBetween(String value1, String value2) {
+            addCriterion("id_card not between", value1, value2, "idCard");
+            return (Criteria) this;
+        }
+
+        public Criteria andCardPicIsNull() {
+            addCriterion("card_pic is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCardPicIsNotNull() {
+            addCriterion("card_pic is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCardPicEqualTo(String value) {
+            addCriterion("card_pic =", value, "cardPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andCardPicNotEqualTo(String value) {
+            addCriterion("card_pic <>", value, "cardPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andCardPicGreaterThan(String value) {
+            addCriterion("card_pic >", value, "cardPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andCardPicGreaterThanOrEqualTo(String value) {
+            addCriterion("card_pic >=", value, "cardPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andCardPicLessThan(String value) {
+            addCriterion("card_pic <", value, "cardPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andCardPicLessThanOrEqualTo(String value) {
+            addCriterion("card_pic <=", value, "cardPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andCardPicLike(String value) {
+            addCriterion("card_pic like", value, "cardPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andCardPicNotLike(String value) {
+            addCriterion("card_pic not like", value, "cardPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andCardPicIn(List<String> values) {
+            addCriterion("card_pic in", values, "cardPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andCardPicNotIn(List<String> values) {
+            addCriterion("card_pic not in", values, "cardPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andCardPicBetween(String value1, String value2) {
+            addCriterion("card_pic between", value1, value2, "cardPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andCardPicNotBetween(String value1, String value2) {
+            addCriterion("card_pic not between", value1, value2, "cardPic");
             return (Criteria) this;
         }
     }

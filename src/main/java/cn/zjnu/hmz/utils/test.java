@@ -2,7 +2,6 @@ package cn.zjnu.hmz.utils;
 
 import cn.zjnu.hmz.model.User;
 
-import java.time.temporal.Temporal;
 import java.util.*;
 
 /**
@@ -41,17 +40,6 @@ public class test {
 
     }*/
 
-    public static void main(String[] args) {
-        int[] arr = new int[]{1, 2, 3, 4, 5};
-        List<User> users = new ArrayList<>();
-        for (Integer i = 0; i < 5; i++) {
-            users.add(i, new User(i, " ", " ", " ", " ", " ", " ", " "));
-        }
-        int i = 0;
-        for(Iterator iterator = users.iterator();iterator.hasNext();) {
-            System.out.println(iterator.next());
-            i++;
-        }
 
 
        /* String a = "hhell";
@@ -67,7 +55,6 @@ public class test {
             System.out.println(users.get(i).getId().toString());
 
         }*/
-    }
 
     public static int[] randomArr(int[] arr) {
 
