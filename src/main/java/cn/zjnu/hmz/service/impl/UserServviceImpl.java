@@ -40,4 +40,16 @@ public class UserServviceImpl implements UserService{
         return user;
     }
 
+    @Override
+    public User findByAccount(String account) {
+        UserExample userExample = new UserExample();
+        UserExample.Criteria criteria = userExample.createCriteria();
+        criteria.andAccountEqualTo(account);
+        List<User> users = userMapper.selectByExample(userExample);
+        if (users.size() > 0) {
+            return users.get(0);
+        }
+        return new User();
+    }
+
 }

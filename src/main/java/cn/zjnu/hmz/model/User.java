@@ -11,21 +11,30 @@ public class User {
 
     private String picUrl;
 
-    private String sixPasswrod;
+    private String sixPassword;
 
     private String iphone;
 
     private String email;
 
-    public User(Integer id, String account, String name, String password, String picUrl, String sixPasswrod, String iphone, String email) {
+    private String idCard;
+
+    private String cardPic;
+
+    private String locationId;
+
+    public User(Integer id, String account, String name, String password, String picUrl, String sixPassword, String iphone, String email, String idCard, String cardPic, String locationId) {
         this.id = id;
         this.account = account;
         this.name = name;
         this.password = password;
         this.picUrl = picUrl;
-        this.sixPasswrod = sixPasswrod;
+        this.sixPassword = sixPassword;
         this.iphone = iphone;
         this.email = email;
+        this.idCard = idCard;
+        this.cardPic = cardPic;
+        this.locationId = locationId;
     }
 
     public User() {
@@ -72,12 +81,12 @@ public class User {
         this.picUrl = picUrl == null ? null : picUrl.trim();
     }
 
-    public String getSixPasswrod() {
-        return sixPasswrod;
+    public String getSixPassword() {
+        return sixPassword;
     }
 
-    public void setSixPasswrod(String sixPasswrod) {
-        this.sixPasswrod = sixPasswrod == null ? null : sixPasswrod.trim();
+    public void setSixPassword(String sixPassword) {
+        this.sixPassword = sixPassword == null ? null : sixPassword.trim();
     }
 
     public String getIphone() {
@@ -92,22 +101,31 @@ public class User {
         return email;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", account='" + account + '\'' +
-                ", name='" + name + '\'' +
-                ", password='" + password + '\'' +
-                ", picUrl='" + picUrl + '\'' +
-                ", sixPasswrod='" + sixPasswrod + '\'' +
-                ", iphone='" + iphone + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+    public void setEmail(String email) {
+        this.email = email == null ? null : email.trim();
     }
 
-    public void setEmail(String email) {
+    public String getIdCard() {
+        return idCard;
+    }
 
-        this.email = email == null ? null : email.trim();
+    public void setIdCard(String idCard) {
+        this.idCard = idCard == null ? null : idCard.trim();
+    }
+
+    public String getCardPic() {
+        return cardPic;
+    }
+
+    public void setCardPic(String cardPic) {
+        this.cardPic = cardPic == null ? null : cardPic.trim();
+    }
+
+    public String getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(String locationId) {
+        this.locationId = locationId == null ? null : locationId.trim();
     }
 }

@@ -9,7 +9,8 @@
       <arg column="open_time" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="open_kind" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="open_password" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="open_reson" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="open_reason" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="time_active" jdbcType="VARCHAR" javaType="java.lang.String" />
     </constructor>
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -71,7 +72,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, user_id, door_id, open_time, open_kind, open_password, open_reson
+    id, user_id, door_id, open_time, open_kind, open_password, open_reason, time_active
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.zjnu.hmz.model.DoorRecordExample" >
     select
@@ -79,7 +80,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from door_record
+    from door_Record
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -90,29 +91,29 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from door_record
+    from door_Record
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from door_record
+    delete from door_Record
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="cn.zjnu.hmz.model.DoorRecordExample" >
-    delete from door_record
+    delete from door_Record
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="cn.zjnu.hmz.model.DoorRecord" >
-    insert into door_record (id, user_id, door_id, 
+    insert into door_Record (id, user_id, door_id, 
       open_time, open_kind, open_password, 
-      open_reson)
+      open_reason, time_active)
     values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{doorId,jdbcType=VARCHAR}, 
       #{openTime,jdbcType=VARCHAR}, #{openKind,jdbcType=VARCHAR}, #{openPassword,jdbcType=VARCHAR}, 
-      #{openReson,jdbcType=VARCHAR})
+      #{openReason,jdbcType=VARCHAR}, #{timeActive,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.zjnu.hmz.model.DoorRecord" >
-    insert into door_record
+    insert into door_Record
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
@@ -132,8 +133,11 @@
       <if test="openPassword != null" >
         open_password,
       </if>
-      <if test="openReson != null" >
-        open_reson,
+      <if test="openReason != null" >
+        open_reason,
+      </if>
+      <if test="timeActive != null" >
+        time_active,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -155,19 +159,22 @@
       <if test="openPassword != null" >
         #{openPassword,jdbcType=VARCHAR},
       </if>
-      <if test="openReson != null" >
-        #{openReson,jdbcType=VARCHAR},
+      <if test="openReason != null" >
+        #{openReason,jdbcType=VARCHAR},
+      </if>
+      <if test="timeActive != null" >
+        #{timeActive,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
   <select id="countByExample" parameterType="cn.zjnu.hmz.model.DoorRecordExample" resultType="java.lang.Integer" >
-    select count(*) from door_record
+    select count(*) from door_Record
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update door_record
+    update door_Record
     <set >
       <if test="record.id != null" >
         id = #{record.id,jdbcType=INTEGER},
@@ -187,8 +194,11 @@
       <if test="record.openPassword != null" >
         open_password = #{record.openPassword,jdbcType=VARCHAR},
       </if>
-      <if test="record.openReson != null" >
-        open_reson = #{record.openReson,jdbcType=VARCHAR},
+      <if test="record.openReason != null" >
+        open_reason = #{record.openReason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.timeActive != null" >
+        time_active = #{record.timeActive,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -196,20 +206,21 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
-    update door_record
+    update door_Record
     set id = #{record.id,jdbcType=INTEGER},
       user_id = #{record.userId,jdbcType=INTEGER},
       door_id = #{record.doorId,jdbcType=VARCHAR},
       open_time = #{record.openTime,jdbcType=VARCHAR},
       open_kind = #{record.openKind,jdbcType=VARCHAR},
       open_password = #{record.openPassword,jdbcType=VARCHAR},
-      open_reson = #{record.openReson,jdbcType=VARCHAR}
+      open_reason = #{record.openReason,jdbcType=VARCHAR},
+      time_active = #{record.timeActive,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="cn.zjnu.hmz.model.DoorRecord" >
-    update door_record
+    update door_Record
     <set >
       <if test="userId != null" >
         user_id = #{userId,jdbcType=INTEGER},
@@ -226,20 +237,24 @@
       <if test="openPassword != null" >
         open_password = #{openPassword,jdbcType=VARCHAR},
       </if>
-      <if test="openReson != null" >
-        open_reson = #{openReson,jdbcType=VARCHAR},
+      <if test="openReason != null" >
+        open_reason = #{openReason,jdbcType=VARCHAR},
+      </if>
+      <if test="timeActive != null" >
+        time_active = #{timeActive,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.zjnu.hmz.model.DoorRecord" >
-    update door_record
+    update door_Record
     set user_id = #{userId,jdbcType=INTEGER},
       door_id = #{doorId,jdbcType=VARCHAR},
       open_time = #{openTime,jdbcType=VARCHAR},
       open_kind = #{openKind,jdbcType=VARCHAR},
       open_password = #{openPassword,jdbcType=VARCHAR},
-      open_reson = #{openReson,jdbcType=VARCHAR}
+      open_reason = #{openReason,jdbcType=VARCHAR},
+      time_active = #{timeActive,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -8,9 +8,12 @@
       <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="password" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="pic_url" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="six_passwrod" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="six_password" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="iphone" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="email" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="id_card" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="card_pic" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="location_id" jdbcType="VARCHAR" javaType="java.lang.String" />
     </constructor>
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -72,7 +75,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, account, name, password, pic_url, six_passwrod, iphone, email
+    id, account, name, password, pic_url, six_password, iphone, email, id_card, card_pic, 
+    location_id
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.zjnu.hmz.model.UserExample" >
     select
@@ -106,11 +110,13 @@
   </delete>
   <insert id="insert" parameterType="cn.zjnu.hmz.model.User" >
     insert into user (id, account, name, 
-      password, pic_url, six_passwrod, 
-      iphone, email)
+      password, pic_url, six_password, 
+      iphone, email, id_card, 
+      card_pic, location_id)
     values (#{id,jdbcType=INTEGER}, #{account,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
-      #{password,jdbcType=VARCHAR}, #{picUrl,jdbcType=VARCHAR}, #{sixPasswrod,jdbcType=VARCHAR}, 
-      #{iphone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR})
+      #{password,jdbcType=VARCHAR}, #{picUrl,jdbcType=VARCHAR}, #{sixPassword,jdbcType=VARCHAR}, 
+      #{iphone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{idCard,jdbcType=VARCHAR}, 
+      #{cardPic,jdbcType=VARCHAR}, #{locationId,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.zjnu.hmz.model.User" >
     insert into user
@@ -130,14 +136,23 @@
       <if test="picUrl != null" >
         pic_url,
       </if>
-      <if test="sixPasswrod != null" >
-        six_passwrod,
+      <if test="sixPassword != null" >
+        six_password,
       </if>
       <if test="iphone != null" >
         iphone,
       </if>
       <if test="email != null" >
         email,
+      </if>
+      <if test="idCard != null" >
+        id_card,
+      </if>
+      <if test="cardPic != null" >
+        card_pic,
+      </if>
+      <if test="locationId != null" >
+        location_id,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -156,14 +171,23 @@
       <if test="picUrl != null" >
         #{picUrl,jdbcType=VARCHAR},
       </if>
-      <if test="sixPasswrod != null" >
-        #{sixPasswrod,jdbcType=VARCHAR},
+      <if test="sixPassword != null" >
+        #{sixPassword,jdbcType=VARCHAR},
       </if>
       <if test="iphone != null" >
         #{iphone,jdbcType=VARCHAR},
       </if>
       <if test="email != null" >
         #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null" >
+        #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="cardPic != null" >
+        #{cardPic,jdbcType=VARCHAR},
+      </if>
+      <if test="locationId != null" >
+        #{locationId,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -191,14 +215,23 @@
       <if test="record.picUrl != null" >
         pic_url = #{record.picUrl,jdbcType=VARCHAR},
       </if>
-      <if test="record.sixPasswrod != null" >
-        six_passwrod = #{record.sixPasswrod,jdbcType=VARCHAR},
+      <if test="record.sixPassword != null" >
+        six_password = #{record.sixPassword,jdbcType=VARCHAR},
       </if>
       <if test="record.iphone != null" >
         iphone = #{record.iphone,jdbcType=VARCHAR},
       </if>
       <if test="record.email != null" >
         email = #{record.email,jdbcType=VARCHAR},
+      </if>
+      <if test="record.idCard != null" >
+        id_card = #{record.idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cardPic != null" >
+        card_pic = #{record.cardPic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.locationId != null" >
+        location_id = #{record.locationId,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -212,9 +245,12 @@
       name = #{record.name,jdbcType=VARCHAR},
       password = #{record.password,jdbcType=VARCHAR},
       pic_url = #{record.picUrl,jdbcType=VARCHAR},
-      six_passwrod = #{record.sixPasswrod,jdbcType=VARCHAR},
+      six_password = #{record.sixPassword,jdbcType=VARCHAR},
       iphone = #{record.iphone,jdbcType=VARCHAR},
-      email = #{record.email,jdbcType=VARCHAR}
+      email = #{record.email,jdbcType=VARCHAR},
+      id_card = #{record.idCard,jdbcType=VARCHAR},
+      card_pic = #{record.cardPic,jdbcType=VARCHAR},
+      location_id = #{record.locationId,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -234,14 +270,23 @@
       <if test="picUrl != null" >
         pic_url = #{picUrl,jdbcType=VARCHAR},
       </if>
-      <if test="sixPasswrod != null" >
-        six_passwrod = #{sixPasswrod,jdbcType=VARCHAR},
+      <if test="sixPassword != null" >
+        six_password = #{sixPassword,jdbcType=VARCHAR},
       </if>
       <if test="iphone != null" >
         iphone = #{iphone,jdbcType=VARCHAR},
       </if>
       <if test="email != null" >
         email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null" >
+        id_card = #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="cardPic != null" >
+        card_pic = #{cardPic,jdbcType=VARCHAR},
+      </if>
+      <if test="locationId != null" >
+        location_id = #{locationId,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -252,9 +297,12 @@
       name = #{name,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       pic_url = #{picUrl,jdbcType=VARCHAR},
-      six_passwrod = #{sixPasswrod,jdbcType=VARCHAR},
+      six_password = #{sixPassword,jdbcType=VARCHAR},
       iphone = #{iphone,jdbcType=VARCHAR},
-      email = #{email,jdbcType=VARCHAR}
+      email = #{email,jdbcType=VARCHAR},
+      id_card = #{idCard,jdbcType=VARCHAR},
+      card_pic = #{cardPic,jdbcType=VARCHAR},
+      location_id = #{locationId,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

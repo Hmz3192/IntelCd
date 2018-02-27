@@ -21,7 +21,6 @@ import java.util.List;
  * Created by ThinKPad on 2017/10/29.
  */
 @Controller
-@ResponseBody
 public class UserController {
 
     @Resource
@@ -29,32 +28,58 @@ public class UserController {
     @Resource
     DoorService doorService;
     @RequestMapping(method = RequestMethod.POST, value = "/register")
+    @ResponseBody
     public String register(User user) {
         user.setAccount(Util.getSixId());
-        user.setPicUrl("http://101.132.112.251:8111/IntelCd/img/2.jpg");
+        user.setPicUrl("http://101.201.234.133:8111/IntelCd/img/2.jpg");
         user.setPassword(String.valueOf(new Md5Hash(user.getPassword(), JsonUtils.readSalt())));
         userService.register(user);
         return user.getAccount();
 
     }
 
+    @RequestMapping(value = "/index")
+    public String index(String hxid) {
+        return "font/index";
 
+    }
+
+    @ResponseBody
     @RequestMapping(method = RequestMethod.GET, value = "/getPic")
     public User getPic(String hxid) {
         return userService.getPic(hxid);
 
     }
 
-
+    @ResponseBody
     @RequestMapping(method = RequestMethod.GET, value = "/getKeyByUser")
     public List<Door> getKeyByUser(String hxid) {
         return doorService.getDoorByUser(hxid);
 
     }
-
+    @ResponseBody
     @RequestMapping(method = RequestMethod.GET, value = "/getDoorRecord")
     public List<DoorRecord> getDoorRecord(String doorId) {
         return doorService.getDoorRecord(doorId);
+
+    }
+
+    @ResponseBody
+    @RequestMapping(method = RequestMethod.POST, value = "/addKey")
+    public String addKey(String userId, String doorName, String doorLocation, String addTime, String doorKind, String longitude, String dimension) {
+        Door newnestId = doorService.getNewnestId();
+        Door door = new Door();
+        door.setAddTime(addTime);
+        door.setDimension(dimension);
+        door.setDoorKind(doorKind);
+        door.setDoorLocation(doorLocation);
+        door.setUserId(Integer.valueOf(userId));
+        door.setLongitude(longitude);
+        door.setDoorName(doorName);
+        door.setDoorId(String.valueOf(Integer.valueOf(newnestId.getDoorId()) + 1));
+        door.setDoorState(String.valueOf(0));
+        doorService.addOne(door);
+        return "OK";
 
     }
 }

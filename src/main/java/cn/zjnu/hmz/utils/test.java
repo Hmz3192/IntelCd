@@ -41,7 +41,7 @@ public class test {
 
     }*/
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         int[] arr = new int[]{1, 2, 3, 4, 5};
         List<User> users = new ArrayList<>();
         for (Integer i = 0; i < 5; i++) {
@@ -54,7 +54,7 @@ public class test {
         }
 
 
-       /* String a = "hhell";
+       *//* String a = "hhell";
         a = a + "ssdasdasd";
         System.out.println(a);
 
@@ -66,8 +66,8 @@ public class test {
         for (int i = 0 ; i< 5 ;i++) {
             System.out.println(users.get(i).getId().toString());
 
-        }*/
-    }
+        }*//*
+    }*/
 
     public static int[] randomArr(int[] arr) {
 

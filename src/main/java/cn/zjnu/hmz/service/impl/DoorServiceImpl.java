@@ -41,4 +41,21 @@ public class DoorServiceImpl implements DoorService {
 
         return doors;
     }
+
+    @Override
+    public Door getNewnestId() {
+        List<Door> doors = new ArrayList<>();
+        DoorExample doorExample = new DoorExample();
+        DoorExample.Criteria criteria = doorExample.createCriteria();
+        doors = doorMapper.selectByExample(doorExample);
+        Door door = new Door();
+        door = doors.get(doors.size() - 1);
+        return door;
+    }
+
+    @Override
+    public int addOne(Door door) {
+        doorMapper.insertSelective(door);
+        return 0;
+    }
 }

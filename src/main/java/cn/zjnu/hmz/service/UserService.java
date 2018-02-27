@@ -12,4 +12,7 @@ public interface UserService {
 
 
     User getPic(String hxid);
+
+
+    User findByAccount(String account);
 }

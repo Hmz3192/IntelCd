@@ -12,4 +12,7 @@ public interface DoorService {
 
     List<DoorRecord> getDoorRecord(String doorId);
 
+    Door getNewnestId();
+
+    int addOne(Door door);
 }

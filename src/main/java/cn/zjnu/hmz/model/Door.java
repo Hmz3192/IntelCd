@@ -1,7 +1,5 @@
 package cn.zjnu.hmz.model;
 
-import java.util.Date;
-
 public class Door {
     private Integer id;
 
@@ -13,13 +11,17 @@ public class Door {
 
     private String doorId;
 
-    private Date addTime;
+    private String addTime;
 
     private String doorState;
 
     private String doorKind;
 
-    public Door(Integer id, Integer userId, String doorName, String doorLocation, String doorId, Date addTime, String doorState, String doorKind) {
+    private String longitude;
+
+    private String dimension;
+
+    public Door(Integer id, Integer userId, String doorName, String doorLocation, String doorId, String addTime, String doorState, String doorKind, String longitude, String dimension) {
         this.id = id;
         this.userId = userId;
         this.doorName = doorName;
@@ -28,6 +30,8 @@ public class Door {
         this.addTime = addTime;
         this.doorState = doorState;
         this.doorKind = doorKind;
+        this.longitude = longitude;
+        this.dimension = dimension;
     }
 
     public Door() {
@@ -74,12 +78,12 @@ public class Door {
         this.doorId = doorId == null ? null : doorId.trim();
     }
 
-    public Date getAddTime() {
+    public String getAddTime() {
         return addTime;
     }
 
-    public void setAddTime(Date addTime) {
-        this.addTime = addTime;
+    public void setAddTime(String addTime) {
+        this.addTime = addTime == null ? null : addTime.trim();
     }
 
     public String getDoorState() {
@@ -96,5 +100,21 @@ public class Door {
 
     public void setDoorKind(String doorKind) {
         this.doorKind = doorKind == null ? null : doorKind.trim();
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude == null ? null : longitude.trim();
+    }
+
+    public String getDimension() {
+        return dimension;
+    }
+
+    public void setDimension(String dimension) {
+        this.dimension = dimension == null ? null : dimension.trim();
     }
 }

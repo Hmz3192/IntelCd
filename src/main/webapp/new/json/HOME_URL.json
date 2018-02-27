@@ -1,0 +1,46 @@
+{
+  "code": 200,
+  "msg": "请求成功",
+  "result": {
+    "banner_info": [
+      {
+        "image": "/new/img/act/z2.png",
+        "option": 3,
+        "type": 0
+      },
+      {
+        "image": "/new/img/act/z4.png",
+        "option": 2,
+        "type": 0
+      },
+      {
+        "image": "/new/img/act/z3.png",
+        "option": 1,
+        "type": 0
+      }
+    ],
+    "channel_info": [
+      {
+        "channel_name": "美食",
+        "image": "/new/img/channel/c1.png",
+        "value": {
+          "channel_id": "8"
+        }
+      },
+      {
+        "channel_name": "购物",
+        "image": "/new/img/channel/c2.png",
+        "value": {
+          "channel_id": "4"
+        }
+      },
+      {
+        "channel_name": "玩乐",
+        "image": "/new/img/channel/c3.png",
+        "value": {
+          "channel_id": "3"
+        }
+      }
+    ]
+  }
+}

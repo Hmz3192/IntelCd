@@ -1,7 +1,6 @@
 package cn.zjnu.hmz.model;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class DoorExample {
@@ -445,52 +444,62 @@ public class DoorExample {
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeEqualTo(Date value) {
+        public Criteria andAddTimeEqualTo(String value) {
             addCriterion("add_time =", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeNotEqualTo(Date value) {
+        public Criteria andAddTimeNotEqualTo(String value) {
             addCriterion("add_time <>", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeGreaterThan(Date value) {
+        public Criteria andAddTimeGreaterThan(String value) {
             addCriterion("add_time >", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeGreaterThanOrEqualTo(Date value) {
+        public Criteria andAddTimeGreaterThanOrEqualTo(String value) {
             addCriterion("add_time >=", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeLessThan(Date value) {
+        public Criteria andAddTimeLessThan(String value) {
             addCriterion("add_time <", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeLessThanOrEqualTo(Date value) {
+        public Criteria andAddTimeLessThanOrEqualTo(String value) {
             addCriterion("add_time <=", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeIn(List<Date> values) {
+        public Criteria andAddTimeLike(String value) {
+            addCriterion("add_time like", value, "addTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddTimeNotLike(String value) {
+            addCriterion("add_time not like", value, "addTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAddTimeIn(List<String> values) {
             addCriterion("add_time in", values, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeNotIn(List<Date> values) {
+        public Criteria andAddTimeNotIn(List<String> values) {
             addCriterion("add_time not in", values, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeBetween(Date value1, Date value2) {
+        public Criteria andAddTimeBetween(String value1, String value2) {
             addCriterion("add_time between", value1, value2, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeNotBetween(Date value1, Date value2) {
+        public Criteria andAddTimeNotBetween(String value1, String value2) {
             addCriterion("add_time not between", value1, value2, "addTime");
             return (Criteria) this;
         }
@@ -632,6 +641,146 @@ public class DoorExample {
 
         public Criteria andDoorKindNotBetween(String value1, String value2) {
             addCriterion("door_kind not between", value1, value2, "doorKind");
+            return (Criteria) this;
+        }
+
+        public Criteria andLongitudeIsNull() {
+            addCriterion("longitude is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLongitudeIsNotNull() {
+            addCriterion("longitude is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLongitudeEqualTo(String value) {
+            addCriterion("longitude =", value, "longitude");
+            return (Criteria) this;
+        }
+
+        public Criteria andLongitudeNotEqualTo(String value) {
+            addCriterion("longitude <>", value, "longitude");
+            return (Criteria) this;
+        }
+
+        public Criteria andLongitudeGreaterThan(String value) {
+            addCriterion("longitude >", value, "longitude");
+            return (Criteria) this;
+        }
+
+        public Criteria andLongitudeGreaterThanOrEqualTo(String value) {
+            addCriterion("longitude >=", value, "longitude");
+            return (Criteria) this;
+        }
+
+        public Criteria andLongitudeLessThan(String value) {
+            addCriterion("longitude <", value, "longitude");
+            return (Criteria) this;
+        }
+
+        public Criteria andLongitudeLessThanOrEqualTo(String value) {
+            addCriterion("longitude <=", value, "longitude");
+            return (Criteria) this;
+        }
+
+        public Criteria andLongitudeLike(String value) {
+            addCriterion("longitude like", value, "longitude");
+            return (Criteria) this;
+        }
+
+        public Criteria andLongitudeNotLike(String value) {
+            addCriterion("longitude not like", value, "longitude");
+            return (Criteria) this;
+        }
+
+        public Criteria andLongitudeIn(List<String> values) {
+            addCriterion("longitude in", values, "longitude");
+            return (Criteria) this;
+        }
+
+        public Criteria andLongitudeNotIn(List<String> values) {
+            addCriterion("longitude not in", values, "longitude");
+            return (Criteria) this;
+        }
+
+        public Criteria andLongitudeBetween(String value1, String value2) {
+            addCriterion("longitude between", value1, value2, "longitude");
+            return (Criteria) this;
+        }
+
+        public Criteria andLongitudeNotBetween(String value1, String value2) {
+            addCriterion("longitude not between", value1, value2, "longitude");
+            return (Criteria) this;
+        }
+
+        public Criteria andDimensionIsNull() {
+            addCriterion("dimension is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDimensionIsNotNull() {
+            addCriterion("dimension is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDimensionEqualTo(String value) {
+            addCriterion("dimension =", value, "dimension");
+            return (Criteria) this;
+        }
+
+        public Criteria andDimensionNotEqualTo(String value) {
+            addCriterion("dimension <>", value, "dimension");
+            return (Criteria) this;
+        }
+
+        public Criteria andDimensionGreaterThan(String value) {
+            addCriterion("dimension >", value, "dimension");
+            return (Criteria) this;
+        }
+
+        public Criteria andDimensionGreaterThanOrEqualTo(String value) {
+            addCriterion("dimension >=", value, "dimension");
+            return (Criteria) this;
+        }
+
+        public Criteria andDimensionLessThan(String value) {
+            addCriterion("dimension <", value, "dimension");
+            return (Criteria) this;
+        }
+
+        public Criteria andDimensionLessThanOrEqualTo(String value) {
+            addCriterion("dimension <=", value, "dimension");
+            return (Criteria) this;
+        }
+
+        public Criteria andDimensionLike(String value) {
+            addCriterion("dimension like", value, "dimension");
+            return (Criteria) this;
+        }
+
+        public Criteria andDimensionNotLike(String value) {
+            addCriterion("dimension not like", value, "dimension");
+            return (Criteria) this;
+        }
+
+        public Criteria andDimensionIn(List<String> values) {
+            addCriterion("dimension in", values, "dimension");
+            return (Criteria) this;
+        }
+
+        public Criteria andDimensionNotIn(List<String> values) {
+            addCriterion("dimension not in", values, "dimension");
+            return (Criteria) this;
+        }
+
+        public Criteria andDimensionBetween(String value1, String value2) {
+            addCriterion("dimension between", value1, value2, "dimension");
+            return (Criteria) this;
+        }
+
+        public Criteria andDimensionNotBetween(String value1, String value2) {
+            addCriterion("dimension not between", value1, value2, "dimension");
             return (Criteria) this;
         }
     }
