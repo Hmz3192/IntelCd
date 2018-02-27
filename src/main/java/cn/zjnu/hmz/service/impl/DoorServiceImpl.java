@@ -38,7 +38,6 @@ public class DoorServiceImpl implements DoorService {
         DoorRecordExample.Criteria criteria = doorExample.createCriteria();
         criteria.andDoorIdEqualTo(doorId);
         doors = doorRecordMapper.selectByExample(doorExample);
-
         return doors;
     }
 
