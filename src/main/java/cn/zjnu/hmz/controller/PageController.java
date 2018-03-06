@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 /**
  * @Author Hu mingzhi
@@ -26,7 +27,7 @@ public class PageController {
     private UserService userService;
 
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public String login(String account, String password) {
+    public String login(String account, String password, HttpSession session) {
 //        boolean login = userService.login(account, password);
         UsernamePasswordToken token = new UsernamePasswordToken(account, CipherUtil.md5Pwd(password, account));
         Subject currentUser = SecurityUtils.getSubject();
@@ -35,6 +36,7 @@ public class PageController {
 //                token.setRememberMe(true);
                 currentUser.login(token);//验证角色和权限
             }
+            session.setAttribute("user", account);
             System.out.println("验证成功: ");
             return "back/index";
         } catch (Exception e) {

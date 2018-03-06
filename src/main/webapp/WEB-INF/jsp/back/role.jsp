@@ -272,10 +272,24 @@
                 <!-- user login dropdown start-->
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="profile-ava">
+                        <c:if test="${sessionScope.user == '110'}">
+                             <span class="profile-ava">
                                 <img alt="" src="${path}/static/back/img/avatar1_small.jpg">
                             </span>
-                        <span class="username">系统管理员</span>
+                            <span class="username">系统管理员</span>
+                        </c:if>
+                        <c:if test="${sessionScope.user == '111'}">
+                            <span class="profile-ava">
+                                <img alt="" src="${path}/static/back/img/avatar-mini.jpg">
+                            </span>
+                            <span class="username">管理员2</span>
+                        </c:if>
+                        <c:if test="${sessionScope.user == '112'}">
+                             <span class="profile-ava">
+                                <img alt="" src="${path}/static/back/img/avatar-mini2.jpg">
+                            </span>
+                            <span class="username">管理员3</span>
+                        </c:if>
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu extended logout">
