@@ -6,8 +6,6 @@ import cn.zjnu.hmz.model.DoorRecord;
 import java.util.List;
 
 public interface DoorService {
-
-
     List<Door> getDoorByUser(String hxid);
 
     List<DoorRecord> getDoorRecord(String doorId);

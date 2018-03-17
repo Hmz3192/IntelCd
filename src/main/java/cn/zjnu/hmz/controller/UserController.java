@@ -3,6 +3,7 @@ package cn.zjnu.hmz.controller;
 import cn.zjnu.hmz.model.Door;
 import cn.zjnu.hmz.model.DoorRecord;
 import cn.zjnu.hmz.model.User;
+import cn.zjnu.hmz.service.DoorRecService;
 import cn.zjnu.hmz.service.DoorService;
 import cn.zjnu.hmz.service.UserService;
 import cn.zjnu.hmz.utils.JsonUtils;
@@ -27,6 +28,8 @@ public class UserController {
     UserService userService;
     @Resource
     DoorService doorService;
+    @Resource
+    DoorRecService DoorRecService;
     @RequestMapping(method = RequestMethod.POST, value = "/register")
     @ResponseBody
     public String register(User user) {
@@ -71,7 +74,7 @@ public class UserController {
         Door door = new Door();
         door.setAddTime(addTime);
         door.setDimension(dimension);
-        door.setDoorKind(doorKind);
+        door.setDoorKind("2");
         door.setDoorLocation(doorLocation);
         door.setUserId(Integer.valueOf(userId));
         door.setLongitude(longitude);
@@ -79,6 +82,28 @@ public class UserController {
         door.setDoorId(String.valueOf(Integer.valueOf(newnestId.getDoorId()) + 1));
         door.setDoorState(String.valueOf(0));
         doorService.addOne(door);
+        return "OK";
+
+    }
+
+
+    @ResponseBody
+    @RequestMapping(method = RequestMethod.POST, value = "/addRec")
+    public String addRec(String userId, String doorId,String kind) {
+        DoorRecord doorRecord = new DoorRecord();
+        doorRecord.setDoorId(doorId);
+        doorRecord.setOpenKind(String.valueOf(2));
+        doorRecord.setOpenTime("2018-03-16");
+        if (kind.equalsIgnoreCase("1")) {
+            doorRecord.setOpenReason("FreeKey--蓝牙--开锁");
+        }else if(kind.equalsIgnoreCase("0")) {
+            doorRecord.setOpenReason("FreeKey--WIFI--开锁");
+        }else if(kind.equalsIgnoreCase("2")) {
+            doorRecord.setOpenReason("User: Send");
+        }
+
+        doorRecord.setUserId(Integer.valueOf(userId));
+        DoorRecService.addOneRec(doorRecord);
         return "OK";
 
     }
